@@ -36,6 +36,12 @@ jobs:
         update: true
         install: mingw-w64-x86_64-gcc mingw-w64-x86_64-make
 
+    - name: Set up Xcode
+      if: matrix.os == 'macos-latest'
+      uses: actions/setup-xcode@v2
+      with:
+        xcode-version: 13.2.1
+
     - uses: actions/checkout@v1
 
     - run: |
